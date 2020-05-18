@@ -1,0 +1,355 @@
+% UCLouvain by Adam Fekete, May 2020, adam.fekete@uclouvain.be
+\mode<presentation>
+
+% Theme options
+% =============
+
+% remove the navigation symbols
+% \setbeamertemplate{navigation symbols}{} 
+	
+% Navigations are compressed into one line.
+\beamer@compresstrue
+
+\def\logofilelight{logos/UCLouvain_logo_light_transparent.pdf}
+\def\logofileldark{logos/UCLouvain_logo_dark_transparent.pdf} 
+
+% TODO implement the following theme options:
+\DeclareOptionBeamer{nonav}[false]{\def\beamer@uclouvain@nonav{true}}
+\DeclareOptionBeamer{nofootline}[false]{\def\beamer@uclouvain@nofootline{true}}
+
+\ProcessOptionsBeamer
+
+
+% Packages
+% ========
+
+% inline graphics					
+\usepackage{tikz}
+\usetikzlibrary{shapes,shadows,arrows,backgrounds,mindmap,decorations.pathreplacing,positioning}
+\usepackage{hyperref}
+
+
+% COLOURS and FONT STYLES
+% =======================
+
+% size=
+% \tiny
+% \scriptsize
+% \footnotesize
+% \small
+% \normalsize
+% \large
+% \Large
+% \LARGE
+% \huge
+% \Huge
+
+% shape =
+% \normalfont	document font family
+% \em			emphasis
+% \rmfamily		roman font family
+% \sffamily		sans serif font family
+% \ttfamily		teletypefont family
+% \upshape		upright shape<
+% \itshape		italic shape<
+% \slshape		slanted shape
+% \scshape		Small Capital
+% \bfseries		bold
+% \mdseries		medium weight
+% \lfseries		light
+
+
+% Colour definitions	
+
+\definecolor{ucl-blue}     	 	{RGB}{93, 179, 230}			% UCLouvain cyan
+\definecolor{ucl-blue-dark} 		{RGB}{0, 33, 78} 			% UCLouvain bleu nuit
+\definecolor{ucl-blue-light} 	{RGB}{156, 183, 212}			% UCLouvain bleu gris
+
+\definecolor{ucl-facutly-mede}	{RGB}{136,0,93}
+\definecolor{ucl-facutly-sc} 	{RGB}{0,78,156}
+
+% light grey for theorem background
+\definecolor{lgray}				{gray}{.95}	
+\definecolor{gray}				{gray}{.5}	
+
+
+% Titlepage	
+\setbeamerfont{title}{size=\huge,shape=\bfseries}
+\setbeamerfont{subtitle}{size=\Large,shape=\normalfont}
+
+\setbeamerfont{author}{size=\large, shape=\bfseries}
+\setbeamerfont{institute}{size=\footnotesize,shape=\normalfont}
+\setbeamerfont{date}{size=\footnotesize,shape=\normalfont}
+
+
+% Frame
+
+% text margins
+\setbeamersize{text margin left=21pt,text margin right=21pt} 	
+
+\setbeamerfont{frametitle}{size=\large, shape=\bfseries}
+
+\setbeamercolor{normal text}				{fg=black}				
+\setbeamercolor{text}					{fg=white,bg=ucl-blue-dark}
+
+\setbeamercolor{section in head/foot}	{fg=lgray,bg=black}
+\setbeamercolor{frametitle}				{fg=lgray,bg=ucl-blue-dark}
+\setbeamercolor{framesubtitle}			{fg=ucl-blue-dark,bg=lgray}
+
+\setbeamercolor{section in toc}			{fg=ucl-blue-dark}
+\setbeamercolor{section in toc shaded}	{fg=ucl-blue-dark}
+
+\setbeamercolor{item}					{fg=ucl-blue-dark}
+\setbeamercolor{subitem}					{fg=ucl-blue-dark}
+\setbeamercolor{subsubitem}				{fg=ucl-blue-dark}
+
+\setbeamercolor{caption name}			{fg=black}
+
+\setbeamercolor{abstract title}			{fg=ucl-blue-dark}
+
+% Header/Footer	
+
+% TODO: no effect !!!!!!!!!!!!!!!!!!!!!!!!!!! 	
+\setbeamerfont{title in head/foot}		{size=\tiny, shape=\itshape}
+\setbeamerfont{author in head/foot}		{size=\tiny, shape=\bfseries}
+\setbeamerfont{institute in head/foot}	{size=\tiny, shape=\bfseries}
+
+\setbeamercolor{title in head/foot}		{fg=black!20, bg=black!0}
+\setbeamercolor{author in head/foot}		{fg=black!20, bg=black}
+\setbeamercolor{institute in head/foot}	{fg=black!0, bg=black}
+
+
+% Blocks, theorem-like environments and colorboxes
+\setbeamerfont{block title}{size=\normalsize}	
+
+\setbeamercolor{block title}				{bg=lgray,fg=ucl-blue-dark}
+\setbeamercolor{block body} 				{bg=lgray,fg=black}				
+\setbeamercolor{block title alerted}		{bg=white!95!red}
+\setbeamercolor{block body alerted}		{bg=white!95!red}	
+\setbeamercolor{block title example}		{bg=white!95!ucl-blue-dark,fg=ucl-blue-dark}
+\setbeamercolor{block body example}		{bg=white!95!ucl-blue-dark,fg=black}		
+
+% five different colour schemes for Beamer colour box
+\setbeamercolor{box1}	{fg=white,bg=ucl-blue-dark}		
+\setbeamercolor{box2}	{fg=ucl-blue-dark,bg=lgray}
+\setbeamercolor{box3}	{fg=black,bg=lgray}
+\setbeamercolor{box4}	{fg=red,bg=lgray}	
+\setbeamercolor{box5}	{fg=white,bg=red}	
+
+% end of proof symbol
+\setbeamertemplate{qed symbol}	{\color{ucl-blue-dark} $\square$}	
+
+% link colors
+% \hypersetup{colorlinks,linkcolor=ucl-blue-dark,urlcolor=ucl-blue-dark}	
+\hypersetup{colorlinks,linkcolor=ucl-blue-dark,urlcolor=ucl-blue-dark}	
+
+% url addreses are sans-serif font (not typewritter)
+\urlstyle{sf}
+
+% button frame
+\setbeamercolor{button}			{bg=lgray,fg=ucl-blue-dark}			
+
+
+% INNER THEME
+% ===========
+
+% toc symbols
+\setbeamertemplate{sections/subsections in toc}[sections numbered]
+% \setbeamertemplate{sections/subsections in toc}[subsections numbered]
+% \setbeamertemplate{sections/subsections in toc}[circle]
+% \setbeamertemplate{sections/subsections in toc}[square]
+
+% itemize list
+
+\setbeamertemplate{itemize item}[square] 			
+\setbeamertemplate{itemize subitem}[circle]			
+\setbeamertemplate{itemize subsubitem}{-}
+
+% correction for warning for subitem circle bullect
+\renewcommand\textbullet{\ensuremath{\bullet}}
+
+% enumerate list
+\setbeamertemplate{enumerate item}{\insertenumlabel \enspace}		
+\setbeamertemplate{enumerate subitem}{\insertsubenumlabel  \enspace}
+\setbeamertemplate{enumerate subsubitem}{\insertsubsubenumlabel \enspace}
+
+
+% OUTER THEME
+% ===========
+
+
+
+
+\def\uclouvain@hrulefill#1{
+  \leavevmode\leaders\hrule\@height#1\hfill \kern\z@
+}
+
+
+% Headline/Footline template
+
+\defbeamertemplate*{footline}{uclouvain theme}
+{
+	\nointerlineskip
+	\begin{beamercolorbox}[ht=3.75ex,dp=4.75ex,leftskip=2pt,rightskip=2pt]{section in head/foot}
+		\hypersetup{hidelinks}
+		\insertnavigation{\columnwidth}
+	\end{beamercolorbox}
+	
+}
+
+
+%\defbeamertemplate*{footline}{uclouvain theme}
+%{
+%	% disable link colors
+%	\hypersetup{hidelinks} 
+%	\begin{beamercolorbox}[ht=0.23cm,dp=.12cm,wd=\paperwidth,leftskip=10pt,rightskip=10pt]{author in head/foot}%
+%		{
+%			\usebeamerfont{author in head/foot}
+%			\insertshortauthor
+%		}
+%    	\;--\;
+%    	{
+%			\usebeamerfont{title in head/foot}\usebeamercolor[fg]{title in head/foot}
+%		    \insertshorttitle
+%    	}
+%    	\hfill%
+%    	{
+%      		\usebeamerfont{institute in head/foot}%
+%      		\usebeamercolor[fg]{institute in head/foot}%
+%      		\insertshortinstitute
+%    	}
+%	\end{beamercolorbox}%
+%}
+
+
+%\defbeamertemplate*{footline}{uclouvain theme}
+%{
+%	% disable link colors
+%	\hypersetup{hidelinks} 
+%	\begin{tikzpicture}[remember picture,overlay]
+%		% blue background rectangle
+%		\node [fill,fill=ucl-blue-dark,minimum width=\paperwidth,minimum height=.08\paperheight,anchor=south west] 
+%			at (current page.south west) {};
+%	
+%		% footnote text
+%		\node [white,anchor=west,xshift=.084\paperheight, yshift=.04\paperheight, text depth=0pt] 	
+%			at (current page.south west) {\scriptsize \insertframenumber};
+%			
+%		\node [white,anchor=west,xshift=.15\paperheight, yshift=.04\paperheight, text depth=0pt] 	
+%			at (current page.south west) {\scriptsize \insertshorttitle};
+%		
+%		% Logo
+%		\node [anchor=east,xshift=-.02\paperheight,yshift=.04\paperheight] at (current page.south east) 
+%			{\includegraphics[height=.05\paperheight]{\logofileldark}};
+%	\end{tikzpicture}
+%}	
+
+
+
+%%head frametitle	
+%\setbeamertemplate{frametitle}
+%{
+%	\vspace{18pt}
+%	{\usebeamerfont{frametitle}{\insertframetitle}} 
+%	% {\usebeamerfont{frametitle}{\thesection ~ ~ \insertframetitle}} 
+%
+%}
+
+
+% Frametitle template
+\defbeamertemplate*{frametitle}{uclouvain theme}
+{
+	\nointerlineskip
+	\begin{beamercolorbox}[wd=\paperwidth,sep=2ex,leftskip=1pt,rightskip=1pt]{frametitle}
+		\usebeamerfont{frametitle}
+		\strut\insertframetitle\strut
+		\hspace{1ex}\uclouvain@hrulefill{0.5pt}
+		\raisebox{-4pt}{\includegraphics[height=15pt]{\logofileldark}}\par
+	\end{beamercolorbox}
+	
+	\ifx\insertframesubtitle\@empty%
+	\else%
+	{%
+	\nointerlineskip%
+	\begin{beamercolorbox}[wd=\paperwidth,sep=1ex,leftskip=7pt,rightskip=7pt]{framesubtitle}
+		\usebeamerfont{framesubtitle}
+		\insertframesubtitle\strut\par
+	\end{beamercolorbox}%
+	}%
+	\fi%
+}
+
+% Frametitle continuations
+\defbeamertemplate*{frametitle continuation}{uclouvain theme}{}
+% \defbeamertemplate*{frametitle continuation}{uclouvain theme}{\insertcontinuationcountroman}
+
+
+
+
+
+% TITLE PAGE (Default)
+% ====================
+ 
+
+\setbeamertemplate{title page}
+{
+ 
+	\begin{tikzpicture}[remember picture,overlay]
+	
+	% Background for title 
+	\fill [color=ucl-blue-dark]
+		(current page.south east)   rectangle   ([shift={(0,-0.25\paperheight)}]current page.north west);
+
+	% Background for author and date
+	\node [fill,fill=ucl-blue-light,minimum width=\paperwidth,minimum height=0.255\paperheight,anchor=south west]
+		at (current page.south west) {};
+										   				
+	% Logo
+	\node [anchor=north west,xshift=0.0525\paperheight,yshift=-.0525\paperheight,inner sep=0pt]
+		at (current page.north west) 
+		{\includegraphics[height=.14\paperheight]{\logofilelight}};
+
+	% title graphic (optional)
+	\node [anchor=north east,xshift=-.0525\paperwidth,yshift=.725\paperheight,inner sep=0pt] 
+		at (current page.south east) 
+		{\inserttitlegraphic};
+
+	% subtitle
+	\node [white, text width=.66\paperwidth, text depth=0pt, 
+		anchor=north west, xshift=.082\paperheight, yshift=.4\paperheight] (subtitle)
+	 	at (current page.south west) 
+	 	{\usebeamerfont{subtitle}\insertsubtitle};
+
+	% title
+	\node [white, text width=.66\paperwidth, minimum height=.12\paperheight, 
+		node distance=3pt, above=of subtitle.north west,anchor=south west]
+		{\usebeamerfont{title}\inserttitle};
+
+	% authors, institure, date   
+	\node [ucl-blue-dark, text width=.66\paperwidth, text depth=0pt, anchor=north west, xshift=.082\paperheight, yshift=.24\paperheight, font=\fontsize{10}{11}] 
+	 	at (current page.south west) 
+		{\usebeamerfont{author}\insertauthor \\	
+		 \usebeamerfont{institute}\vspace{2pt}\insertinstitute \\ 
+		 \usebeamerfont{date}\vspace{2pt}\insertdate};	
+		 
+	\end{tikzpicture}
+}
+
+
+
+%  TABLE OF CONTENTS (displayed before each section)
+% ==================================================
+
+\AtBeginSection[] {
+	\begin{frame}
+    	\frametitle{Outline} 
+	    	{
+	    	\hypersetup{hidelinks} %disable link colors
+			\hfill	{\large\parbox{.95\textwidth}{\tableofcontents[currentsection,hideothersubsections]}}
+			}
+	\end{frame}
+}
+
+
+\mode
+<all> 
