@@ -27,7 +27,6 @@
 %\usepackage{lmodern}
 \usepackage{biolinum}
 
-\usepackage{fontawesome}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -70,8 +69,8 @@
 
 
 % Content in the [] will appear in footline
-\title[Introduction]{UCLouvain beamer template \faThumbsOUp}
-\subtitle{stay at home \faCoffee}
+\title[Introduction]{UCLouvain beamer template}
+\subtitle{stay at home}
 
 \author[S. Name]{Author S. Name\inst{1}}
 \institute[UCLouvain]{\inst{1} MODL, IMCN, \\Université catholique de Louvain, Belgium}
@@ -86,14 +85,14 @@
 % ==================================
 
 % recalculate head and foot dimension
-%\csname beamer@calculateheadfoot\endcsname 
+\csname beamer@calculateheadfoot\endcsname 
 
 \begin{frame}[c,plain,noframenumbering]\begin{tikzpicture}[remember picture,overlay]
 	\fill[fill=ucl-blue-dark]
    	(current page.south east) rectangle (current page.north west);
 \end{tikzpicture}
 \centering
-\includegraphics[width = 0.5\paperwidth]{logos/UCLouvain_logo_dark_transparent.pdf}
+\includegraphics[width = 0.5\paperwidth]{UCLouvain_logo_dark_transparent.pdf}
 \end{frame}
 
 % Title page
@@ -127,7 +126,7 @@
 \section{Theme options}
 
 \begin{frame}[fragile]{Title page image}
-Optionally, you can add your own title page graphic by declaring \texttt{titlegraphic} (does not work in combination with \texttt{sedes} option).
+sdfsdsOptionally, you can add your own title page graphic by declaring \texttt{titlegraphic} (does not work in combination with \texttt{sedes} option).
 
 \vspace{24pt}
 Example:
@@ -298,7 +297,7 @@ To change all math into sans-serif delete this line from the preamble in .tex fi
 \vspace{-12pt}
 	\begin{figure}
 	\centering
-	\includegraphics[width=0.6\textwidth]{example_figure.pdf}
+	\includegraphics[width=0.6\textwidth]{figures/example_figure.pdf}
 	\caption{Example graphic \label{fig:figure1}}
 	\footnotesize
 	\flushleft
