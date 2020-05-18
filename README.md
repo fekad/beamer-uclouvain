@@ -11,7 +11,7 @@ make install
 
 To remove the style run:
 ```bash
-make install
+make uninstall
 ```
 
 
