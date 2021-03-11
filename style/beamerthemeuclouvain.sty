@@ -342,12 +342,19 @@
 % ==================================================
 
 \AtBeginSection[] {
-	\begin{frame}
-    	\frametitle{Outline} 
-	    	{
-	    	\hypersetup{hidelinks} %disable link colors
-			\hfill	{\large\parbox{.95\textwidth}{\tableofcontents[currentsection,hideothersubsections]}}
-			}
+	% \begin{frame}\frametitle{Outline}
+	% 	\hypersetup{hidelinks} % disable link colors
+	% 	\hfill	{\large\parbox{.95\textwidth}{\tableofcontents[currentsection,hideothersubsections]}}
+	% \end{frame}
+
+	\begin{frame}[c,plain,noframenumbering]
+		\begin{tikzpicture}[remember picture,overlay]
+			\fill[fill=ucl-blue]
+	    	(current page.south east)  rectangle  (current page.north west);
+		\end{tikzpicture}
+
+		\vspace{20pt} 
+		\huge\textbf{\textcolor{white}{\secname}}
 	\end{frame}
 }
 

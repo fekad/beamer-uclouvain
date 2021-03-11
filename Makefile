@@ -13,6 +13,11 @@ install:
 	@mkdir -p $(INSTALL_DIR)
 	@cp $(addprefix $(SOURCE_DIR)/, $(SOURCE_FILES)) $(INSTALL_DIR)
 
+dev_install:
+	@echo "Installing the style as symbolic links into: $(INSTALL_DIR)"
+	@mkdir -p $(INSTALL_DIR)
+	@ln -s $(abspath $(addprefix $(SOURCE_DIR)/, $(SOURCE_FILES))) $(INSTALL_DIR)
+
 
 uninstall:
 	@echo "Removing: $(INSTALL_DIR)"
